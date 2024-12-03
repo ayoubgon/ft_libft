@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:15:34 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/15 16:42:45 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/03 19:41:14 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,8 @@ char	*ft_itoa(int n)
 	ft_file(i_toa, len_nb - 1, num);
 	return (i_toa);
 }
+// #include <libc.h>
+// int main()
+// {
+// 	printf("%s",ft_itoa(0b0101));
+// }

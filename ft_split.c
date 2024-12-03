@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:23:26 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/26 12:48:26 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/03 19:24:11 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	count_word(const char *s, char c)
 	return (count);
 }
 
-static char	*alloc_word(const char *s, int start, int end)
+static char	*alloc_word(const char *s, size_t start, size_t end)
 {
 	char	*str;
 	size_t	len;
@@ -85,10 +85,13 @@ char	**ft_split(const char *s, char c)
 	size_t	i;
 	int		st;
 	int		en;
-
+	
+	// (1) && (i = 0, st = -1, en = -1);
 	initiate_vars(&i, &st, &en);
+	if (!s)
+		return (NULL);
 	ar = (char **)malloc((count_word(s, c) + 1) * sizeof(char *));
-	if (!s || !ar)
+	if (!ar)
 		return (NULL);
 	while (++en <= (int)ft_strlen(s))
 	{
@@ -97,7 +100,7 @@ char	**ft_split(const char *s, char c)
 		else if ((s[en] == c || en == (int)ft_strlen(s)) && st >= 0)
 		{
 			ar[i++] = alloc_word(s, st, en);
-			if (!ar)
+			if (!ar[i - 1])
 				return (ft_free_all(ar, i));
 			st = -1;
 		}

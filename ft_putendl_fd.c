@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:22:03 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/12 18:35:47 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/11/30 16:59:04 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	if (!s || fd == -1)
+	if (!s || fd < 0)
 		return ;
 	while (s[i])
 	{

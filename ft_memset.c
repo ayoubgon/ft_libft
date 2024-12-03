@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:20:41 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/25 13:24:26 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/02 16:48:11 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((char *)str)[i] = c;
+		((unsigned char *)str)[i] = (unsigned char)c;
 		i++;
 	}
 	return (str);

@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:18:49 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/16 13:19:11 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/03 17:13:08 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 			ds[len] = sr[len];
 	else
 	{
-		while (i < len)
-		{
-			ds[i] = sr[i];
-			i++;
-		}
+		ft_memcpy(dest, src, len);
 	}
 	return (dest);
 }

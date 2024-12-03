@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:12:15 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/16 12:09:37 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/03 17:02:38 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*cal;
-	size_t	check;
+	int		check;
 
 	if (size == 0)
-	{
-		cal = (void *)malloc(0);
-		if (cal == NULL)
-			return (NULL);
-		return (cal);
-	}
+		return (malloc(0));
 	check = count * size;
-	if ((check / count) != size)
+	if (check / size != count)
 		return (NULL);
-	cal = (void *)malloc(count * size);
+	cal = malloc(count * size);
 	if (!cal)
 		return (NULL);
 	ft_bzero (cal, count * size);

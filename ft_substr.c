@@ -6,7 +6,7 @@
 /*   By: adehbi <adehbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:30:39 by adehbi            #+#    #+#             */
-/*   Updated: 2024/11/12 18:36:31 by adehbi           ###   ########.fr       */
+/*   Updated: 2024/12/03 17:01:30 by adehbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	len_s = ft_strlen(s + start);
-	if (start >= (unsigned int)ft_strlen(s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	len_s = ft_strlen(s + start);
 	if (len_s < len)
 		len = len_s;
 	str = (char *)malloc(len + 1);
